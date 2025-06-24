@@ -14,6 +14,7 @@ class GerenciaController extends Controller
     public function index()
     {
         //
+        return gerencia::all();
     }
 
     /**

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\menus;
 use App\Http\Requests\StoremenusRequest;
 use App\Http\Requests\UpdatemenusRequest;
+use App\Http\Resources\menusResource;
 
 class MenusController extends Controller
 {
@@ -14,6 +15,7 @@ class MenusController extends Controller
     public function index()
     {
         //
+        return menus::all();
     }
 
     /**
@@ -30,6 +32,8 @@ class MenusController extends Controller
     public function store(StoremenusRequest $request)
     {
         //
+        //dd($request);
+        return new menusResource(menus::create($request->all()));
     }
 
     /**

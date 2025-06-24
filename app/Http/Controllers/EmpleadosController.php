@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\metodoPago;
-use App\Http\Requests\StoremetodoPagoRequest;
-use App\Http\Requests\UpdatemetodoPagoRequest;
+use App\Models\empleados;
+use App\Http\Requests\StoreempleadosRequest;
+use App\Http\Requests\UpdateempleadosRequest;
 
-class MetodoPagoController extends Controller
+class EmpleadosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,6 @@ class MetodoPagoController extends Controller
     public function index()
     {
         //
-        return metodoPago::all();
     }
 
     /**
@@ -28,7 +27,7 @@ class MetodoPagoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoremetodoPagoRequest $request)
+    public function store(StoreempleadosRequest $request)
     {
         //
     }
@@ -36,7 +35,7 @@ class MetodoPagoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(metodoPago $metodoPago)
+    public function show(empleados $empleados)
     {
         //
     }
@@ -44,7 +43,7 @@ class MetodoPagoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(metodoPago $metodoPago)
+    public function edit(empleados $empleados)
     {
         //
     }
@@ -52,7 +51,7 @@ class MetodoPagoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatemetodoPagoRequest $request, metodoPago $metodoPago)
+    public function update(UpdateempleadosRequest $request, empleados $empleados)
     {
         //
     }
@@ -60,7 +59,7 @@ class MetodoPagoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(metodoPago $metodoPago)
+    public function destroy(empleados $empleados)
     {
         //
     }

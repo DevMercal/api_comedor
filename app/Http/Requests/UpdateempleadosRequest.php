@@ -4,14 +4,14 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreextrasRequest extends FormRequest
+class UpdateempleadosRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -22,16 +22,7 @@ class StoreextrasRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nombreExtra' => ['required', 'string'],
-            'precioExtra' => ['required', 'string']
+            //
         ];
-    }
-
-    protected function prepareForValidation()
-    {
-        $this->merge([
-            'nombre_extra' => $this->nombreExtra,
-            'precio_extra' => $this->precioExtra
-        ]);
     }
 }

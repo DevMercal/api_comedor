@@ -2,9 +2,10 @@
 
 namespace App\Http\Requests;
 
+use Carbon\Carbon;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreextrasRequest extends FormRequest
+class BlukStoreExtrasRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,16 +23,22 @@ class StoreextrasRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nombreExtra' => ['required', 'string'],
-            'precioExtra' => ['required', 'string']
+            '*.nombreExtra' => ['required', 'string'],
+            '*.precioExtra' => ['required', 'string']
         ];
     }
 
     protected function prepareForValidation()
     {
-        $this->merge([
-            'nombre_extra' => $this->nombreExtra,
-            'precio_extra' => $this->precioExtra
-        ]);
+        $now = Carbon::now();
+        $data = [];
+        foreach ($this->toArray() as $obj) {
+            $obj['nombre_extra'] = $obj['nombreExtra'] ?? NULL;
+            $obj['precio_extra'] = $obj['precioExtra'] ?? NULL;
+            $obj['created_at'] = $now;
+            $obj['updated_at'] = $now;
+            $data[] = $obj;
+        }
+        $this->merge($data);
     }
 }

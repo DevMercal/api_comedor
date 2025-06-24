@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\extras;
 use App\Http\Requests\StoreextrasRequest;
+use App\Http\Requests\BlukStoreExtrasRequest;
 use App\Http\Requests\UpdateextrasRequest;
+use App\Http\Resources\extrasResource;
+use Arr;
 
 class ExtrasController extends Controller
 {
@@ -14,6 +17,7 @@ class ExtrasController extends Controller
     public function index()
     {
         //
+        return extras::all();
     }
 
     /**
@@ -29,9 +33,15 @@ class ExtrasController extends Controller
      */
     public function store(StoreextrasRequest $request)
     {
-        //
+        return new extrasResource(extras::create($request->all()));
     }
 
+    public function blukStore(BlukStoreExtrasRequest $request){
+        $bluk = collect($request->all())->map(function($arr, $key){
+            return Arr::except($arr, ['nombreExtra', 'precioExtra']);
+        });
+        extras::insert($bluk->toArray());
+    }
     /**
      * Display the specified resource.
      */

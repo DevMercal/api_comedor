@@ -24,7 +24,7 @@ return new class extends Migration
 
             $table->foreign('metodo_pago_id')->references('id_metodo_pago')->on('metodo_pagos')->onDelete('cascade');
             $table->foreign('id_menu')->references('id_menu')->on('menuses')->onDelete('cascade');
-            $table->foreign('id_empleado')->references('id_empleado')->on('empleados')->onDelete('cascade');
+            $table->foreign('id_empleado')->references('id_empleados')->on('empleados')->onDelete('cascade');
         });
     }
 

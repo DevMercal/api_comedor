@@ -9,4 +9,9 @@ class extras extends Model
 {
     /** @use HasFactory<\Database\Factories\ExtrasFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'nombre_extra',
+        'precio_extra'
+    ];
 }

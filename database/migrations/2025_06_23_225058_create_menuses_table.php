@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('salad_one', 80);
             $table->string('salad_two', 80);
             $table->string('juice', 80);
+            $table->string('dessert', 80);
             $table->timestamps();
         });
     }

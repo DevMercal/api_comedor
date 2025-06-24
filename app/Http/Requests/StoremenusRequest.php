@@ -11,7 +11,7 @@ class StoremenusRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,23 @@ class StoremenusRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'sopa' => ['required', 'string'],
+            'contourOne' => ['required', 'string'],
+            'contourTwo' => ['required', 'string'],
+            'saladOne' => ['required', 'string'],
+            'saladTwo' => ['required', 'string'],
+            'juice' => ['required', 'string'],
+            'dessert' => ['required', 'string']
         ];
+    }
+
+    protected function prepareForValidation()
+    {
+        $this->merge([
+            'contour_one' => $this->contourOne,
+            'contour_two' => $this->contourTwo,
+            'salad_one' => $this->saladOne,
+            'salad_two' => $this->saladTwo
+        ]);
     }
 }
