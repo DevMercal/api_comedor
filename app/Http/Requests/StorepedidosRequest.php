@@ -11,7 +11,7 @@ class StorepedidosRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,23 @@ class StorepedidosRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'numeroPedido' => ['required', 'integer'],
+            'metodoPagoId' => ['required', 'integer'],
+            'referencia' => ['required', 'integer'],
+            'montoTotal' => ['required', 'integer'],
+            'idMenu' => ['required', 'integer'],
+            'idEmpleado' => ['required', 'integer']
         ];
+    }
+
+    protected function prepareForValidation()
+    {
+        $this->merge([
+            'numero_pedido' => $this->numeroPedido,
+            'metodo_pago_id' => $this->metodoPagoId,
+            'monto_total' => $this->montoTotal,
+            'id_menu' => $this->idMenu,
+            'id_empleado' => $this->idEmpleado
+        ]);
     }
 }

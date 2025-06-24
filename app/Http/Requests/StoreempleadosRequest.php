@@ -11,7 +11,7 @@ class StoreempleadosRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,21 @@ class StoreempleadosRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nombreCompleto' => ['required', 'string'],
+            'cedula' => ['required', 'integer'],
+            'idGerencia' => ['required', 'integer'],
+            'estado' => ['required', 'string'],
+            'tipoEmpleado' => ['required', 'string'],
+            'cargo' => ['required', 'string']
         ];
+    }
+
+    protected function prepareForValidation()
+    {
+        $this->merge([
+            'nombre_completo' => $this->nombreCompleto,
+            'id_gerencia' => $this->idGerencia,
+            'tipo_empleado' => $this->tipoEmpleado
+        ]);
     }
 }

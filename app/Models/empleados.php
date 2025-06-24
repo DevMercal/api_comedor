@@ -9,4 +9,14 @@ class empleados extends Model
 {
     /** @use HasFactory<\Database\Factories\EmpleadosFactory> */
     use HasFactory;
+
+
+    protected $fillable = [
+        'nombre_completo',
+        'cedula',
+        'id_gerencia', 
+        'estado',
+        'tipo_empleado',
+        'cargo'
+    ];
 }
