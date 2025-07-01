@@ -16,7 +16,10 @@ class MetodoPagoSeeder extends Seeder
         //
         // Insertar datos en la tabla 'metodo_pagos'
         metodoPago::create([
-            'metodo_pago' => 'Efectivo',
+            'metodo_pago' => 'Efectivo Bolivares',
+        ]);
+        metodoPago::create([
+            'metodo_pago' => 'Efectivo Divisas',
         ]);
         metodoPago::create([
             'metodo_pago' => 'Pago Móvil',
@@ -24,8 +27,6 @@ class MetodoPagoSeeder extends Seeder
         metodoPago::create([
             'metodo_pago' => 'Transferencia Bancaria',
         ]);
-        metodoPago::create([
-            'metodo_pago' => 'Biopago'
-        ]);
+        
     }
 }

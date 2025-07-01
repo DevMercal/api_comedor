@@ -18,31 +18,83 @@ class GerenciaSeeder extends Seeder
       
         // Puedes agregar más gerencias según sea necesario
         gerencia::create([
-            'nombre_gerencia' => 'Gerencia de Calidad',
+            'nombre_gerencia' => 'GERENCIA DE COMPRAS',
         ]);
         gerencia::create([
-            'nombre_gerencia' => 'Gerencia General',
+            'nombre_gerencia' => 'GERENCIA DE FINANZAS',
         ]);
         gerencia::create([
-            'nombre_gerencia' => 'Gerencia de Finanzas',
+            'nombre_gerencia' => 'GERENCIA DE ADMINISTRACION',
         ]);
         gerencia::create([
-            'nombre_gerencia' => 'Gerencia de Recursos Humanos',
+            'nombre_gerencia' => 'GERENCIA DE INFRAESTRUCTURA',
         ]);
         gerencia::create([
-            'nombre_gerencia' => 'Gerencia de Operaciones',
+            'nombre_gerencia' => 'GERENCIA DE CONTROL DE CALIDAD',
         ]);
         gerencia::create([
-            'nombre_gerencia' => 'Gerencia de Marketing',
+            'nombre_gerencia' => 'GERENCIA GENERAL DE GESTION INSTITUCIONAL',
         ]);
         gerencia::create([
-            'nombre_gerencia' => 'Gerencia de Ventas',
+            'nombre_gerencia' => 'GERENCIA DE GESTION SOCIALISTA',
         ]);
         gerencia::create([
-            'nombre_gerencia' => 'Gerencia de Tecnología',
+            'nombre_gerencia' => 'GERENCIA DE TRANSPORTE GENERAL',
         ]);
         gerencia::create([
-            'nombre_gerencia' => 'Gerencia de Proyectos',
+            'nombre_gerencia' => 'GERENCIA GENERAL DE GESTION ECONOMICA',
         ]);
+        gerencia::create([
+            'nombre_gerencia' => 'GERENCIA DE LOGISTICA',
+        ]);
+        gerencia::create([
+            'nombre_gerencia' => 'GERENCIA DE SEGURIDAD INTEGRAL',
+        ]);
+        gerencia::create([
+            'nombre_gerencia' => 'GERENCIA DE MERCADEO Y VENTAS',
+        ]);
+        gerencia::create([
+            'nombre_gerencia' => 'GERENCIA GENERAL DE OPERACIONES E INSPECCION',
+        ]);
+        gerencia::create([
+            'nombre_gerencia' => 'GERENCIA DE PROYECTOS',
+        ]);
+        gerencia::create([
+            'nombre_gerencia' => 'GERENCIA DE CONTABILIDAD',
+        ]);
+        gerencia::create([
+            'nombre_gerencia' => 'GERENCIA DE SALUD',
+        ]);
+        gerencia::create([
+            'nombre_gerencia' => 'GERENCIA DE INSPECCION Y SEGUIMIENTO',
+        ]);
+        gerencia::create([
+            'nombre_gerencia' => 'OFICINA DE PLANIFICACION Y PRESUPUESTO',
+        ]);
+        gerencia::create([
+            'nombre_gerencia' => 'OFICINA DE GESTION COMUNICACIONAL',
+        ]);
+        gerencia::create([
+            'nombre_gerencia' => 'OFICINA DE GESTION HUMANA',
+        ]);
+        gerencia::create([
+            'nombre_gerencia' => 'OFICINA DE ATENCION AL CIUDADANO',
+        ]);
+        gerencia::create([
+            'nombre_gerencia' => 'OFICINA DE TECNOLOGIA',
+        ]);
+        gerencia::create([
+            'nombre_gerencia' => 'AUDITORIA INTERNA',
+        ]);
+        gerencia::create([
+            'nombre_gerencia' => 'CONSULTORIA JURIDICA',
+        ]);
+        gerencia::create([
+            'nombre_gerencia' => 'PRESIDENCIA',
+        ]);
+        gerencia::create([
+            'nombre_gerencia' => 'ESCUELA DE FORMACION',
+        ]);
+
     }
 }
