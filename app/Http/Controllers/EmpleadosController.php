@@ -8,16 +8,30 @@ use App\Http\Requests\BlukStoreEmpleadosRequest;
 use App\Http\Requests\UpdateempleadosRequest;
 use App\Http\Resources\empleadosResource;
 use Arr;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
 
 class EmpleadosController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        return empleados::all();
+        //return empleados::all();
+         $validated = $request->validate([
+            'gerencia' => 'nullable|integer|exists:gerencias,id_gerencia'
+        ]);
+        $query = empleados::query()->with('gerencia');
+        if (!empty($validated['gerencia'])) {
+            $query->where('id_gerencia', $validated['gerencia']);
+        }
+        return response()->json([
+            'success' => true,
+            'data' => $query->get()
+        ]);
     }
 
     /**
