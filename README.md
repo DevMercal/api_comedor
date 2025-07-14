@@ -23,6 +23,8 @@ Esta API REST esta desarrollada en **Laravel 12**
     - php artisan migrate --path=database/migrations/2025_06_23_224511_create_gerencias_table.php
     - php artisan migrate --path=database/migrations/2025_06_23_225446_create_metodo_pagos_table.php
     - php artisan migrate --path=database/migrations/2025_06_24_193930_create_empleados_table.php
+- **Una vez creada las migraciones lanzamos el siguiente comando:**
+    - php artisan migrate
     
 
 ## Laravel Sponsors

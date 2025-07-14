@@ -30,7 +30,7 @@ class EmpleadosController extends Controller
         }
         return response()->json([
             'success' => true,
-            'data' => $query->get()
+            'data' => $query->paginate(15)
         ]);
     }
 

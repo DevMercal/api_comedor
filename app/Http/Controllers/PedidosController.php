@@ -8,16 +8,38 @@ use App\Http\Requests\BlukStorePedidosRequest;
 use App\Http\Requests\UpdatepedidosRequest;
 use App\Http\Resources\pedidosResource;
 use Arr;
+use Illuminate\Http\Request;
 
 class PedidosController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        return pedidos::all();
+        //return pedidos::all();
+        $validated = $request->validate([
+            'empleado' => 'nullable|integer|exists:empleados,id_empleados',
+            'metodoPago' => 'nullable|integer|exists:metodo_pagos,id_metodo_pago',
+            'menu' => 'nullable|integer|exists:menuses,id_menu',
+        ]);
+        $query = pedidos::with(['metodoPago', 'menu', 'empleado']);
+        if (!empty($validated['empleado'])) {
+            $query->where('id_empleado', $validated['empleado']);
+        }
+        if (!empty($validated['metodopago'])) {
+            $query->where('metodo_pago_id', $validated['metodoPago']);
+        }
+        if (!empty($validated['menu'])) {
+            $query->where('id_menu', $validated['menu']);
+        }
+
+        //dd($query);
+        return response()->json([
+            'success' => true,
+            'data' => $query->paginate(15)
+        ]);
     }
 
     /**
@@ -67,7 +89,6 @@ class PedidosController extends Controller
                 return in_array($item['numero_pedido'], $existingNumPedido);
             })->values()
         ], 201);
-        //pedidos::insert($bluk->toArray());
     }
 
     /**
