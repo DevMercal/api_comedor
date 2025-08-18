@@ -36,9 +36,15 @@ class MetodoPagoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(metodoPago $metodoPago)
+    public function show($id)
     {
         //
+        $registro = metodoPago::where('id_metodo_pago', $id)->first();
+        if (!$registro) {
+            return response()->json(['Error' => 'Registro no encontrado'], 404);
+        }
+
+        return response()->json($registro, 200);
     }
 
     /**
@@ -60,8 +66,12 @@ class MetodoPagoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(metodoPago $metodoPago)
+    public function destroy($id)
     {
-        //
+        $registro = metodoPago::where('id_metodo_pago', $id)->delete();
+        if (!$registro) {
+            return response()->json(['Error' => 'Error al eliminar el metodo de pago'], 404);
+        }
+        return response()->json($registro, 200);
     }
 }

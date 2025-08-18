@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\gerencia;
 use App\Http\Requests\StoregerenciaRequest;
 use App\Http\Requests\UpdategerenciaRequest;
+use App\Policies\GerenciaPolicy;
+use Request;
 
 class GerenciaController extends Controller
 {
@@ -54,9 +56,13 @@ class GerenciaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(gerencia $gerencia)
+    public function show($id)
     {
-        //
+        $registro = gerencia::where('id_gerencia', $id)->first();
+        if (!$registro) {
+            return response()->json(['Error' => 'Registro no encontrado'], 404);
+        }
+        return response()->json($registro, 200);   
     }
 
     /**

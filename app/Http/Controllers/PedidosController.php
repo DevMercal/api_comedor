@@ -94,9 +94,14 @@ class PedidosController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(pedidos $pedidos)
+    public function show($id)
     {
         //
+        $registro = pedidos::where('id_pedido', $id)->first();
+        if (!$registro) {
+            return response()->json(['Error' => 'Erro a encontrar pedido'], 404);
+        }
+        return response()->json($registro, 200);
     }
 
     /**

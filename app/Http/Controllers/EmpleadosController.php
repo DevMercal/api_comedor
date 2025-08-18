@@ -19,9 +19,7 @@ class EmpleadosController extends Controller
      */
     public function index(Request $request)
     {
-        //
-        //return empleados::all();
-         $validated = $request->validate([
+        $validated = $request->validate([
             'gerencia' => 'nullable|integer|exists:gerencias,id_gerencia'
         ]);
         $query = empleados::query()->with('gerencia');

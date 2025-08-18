@@ -39,9 +39,14 @@ class MenusController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(menus $menus)
+    public function show($id)
     {
         //
+        $registro = menus::where('id_menu',$id)->first();
+        if (!$registro) {
+            return response()->json(['Error' => 'Error al encontrar registro'], 404);
+        }
+        return response()->json($registro, 200);
     }
 
     /**
@@ -63,8 +68,12 @@ class MenusController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(menus $menus)
+    public function destroy($id)
     {
-        //
+        $registro = menus::where('id_menu', $id)->delete();
+        if (!$registro) {
+            return response()->json(['Error' => 'Error al eliminar menu'], 404);
+        }
+        return response()->json($registro, 200);
     }
 }
