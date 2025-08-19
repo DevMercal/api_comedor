@@ -7,12 +7,50 @@ use App\Models\User;
 use App\Models\gerencia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Redis;
-use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    //
+    //Endpoint para el inicio de sessión.
+
+    public function login(Request $request){
+        try {
+            //Validamos los campos
+            $validation = Validator::make($request->all(), [
+                'email' => 'required|string|email',
+                'password' => 'required|string|min:8|confirmed',
+            ]);
+            if ($validation->fails()) {
+                return response()->json([
+                    'status' => 400,
+                    'data' => $validation->messages() 
+                ], 400);
+            }else {
+                //Verificar los datos del usuario
+                if (Auth::attempt([
+                    'email' => $request->email,
+                    'password' => $request->password
+                ])) {
+                    //Traer los datos del usuario
+                    $usuario = User::where('email', $request->email)->first();
+                    return response()->json([
+                        'status' => 200,
+                        'data' => $usuario,
+                        'token' => $usuario->createToken('api-key')->plainTextToken
+                    ], 200);
+                }else {
+                    return response()->json([
+                    'status' => 401,
+                    'data' => 'Usuario no encontrado'
+                ], 400);
+                }
+            }
+        } catch (\Throwable $th) {
+            return response()->json($th->getMessage(), 500);
+        }
+    }
+
     public function index(Request $request)
     {
     
@@ -25,19 +63,36 @@ class UserController extends Controller
     }
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
-            'id_gerencia' => 'nullable|integer|exists:gerencias,id_gerencia',
-        ]);
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'id_gerencia' => $request->id_gerencia,
-        ]);
-        return response()->json(['user' => $user], 201);
+        try {
+            $validation = Validator::make($request->all(), [
+                'name' => 'required|string|max:255',
+                'email' => 'required|string|email|max:255|unique:users',
+                'password' => 'required|string|min:8|confirmed',
+                'id_gerencia' => 'nullable|integer|exists:gerencias,id_gerencia',
+            ]);
+            //Si la validación no se cumple
+            if ($validation->fails()) {
+                return response()->json([
+                    'status' => 400,
+                    'data' => $validation->messages() 
+                ], 400);
+            }else {
+                $user = User::create([
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'password' => Hash::make($request->password),
+                    'id_gerencia' => $request->id_gerencia,
+                ]);
+                return response()->json([
+                    'status' => 201,
+                    'data' => $user,
+                    'token' => $user->createToken('api-key')->plainTextToken
+                ], 201);
+            }
+
+        } catch (\Throwable $th) {
+           return response()->json($th->getMessage(), 500);
+        }
     }
     public function show($id){
         $registro = User::where('id',$id)->first();
@@ -53,4 +108,5 @@ class UserController extends Controller
         }
         return response()->json($registro, 200);
     }
+
 }

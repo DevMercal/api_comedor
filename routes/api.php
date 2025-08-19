@@ -22,7 +22,9 @@ Route::group(['prefix' => 'p1', 'namespace' => 'App\Http\Controllers'], function
     Route::apiResource('empleados', EmpleadosController::class);
     Route::apiResource('pedidos', PedidosController::class);
     Route::apiResource('users', UserController::class);
+    Route::post('users/login', ['uses' => 'UserController@login']);
     Route::post('extras/bluk', ['uses' => 'ExtrasController@blukStore']);
     Route::post('empleados/bluk', ['uses' => 'EmpleadosController@blukStore']);
     Route::post('pedidos/bluk', ['uses' => 'PedidosController@blukStore']);
 });
+
