@@ -14,17 +14,21 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::group(['prefix' => 'p1', 'namespace' => 'App\Http\Controllers'], function (){
-    Route::apiResource('gerencias', GerenciaController::class);
-    Route::apiResource('metodosPagos', MetodoPagoController::class);
-    Route::apiResource('menus', MenusController::class);
-    Route::apiResource('extras', ExtrasController::class);
-    Route::apiResource('empleados', EmpleadosController::class);
-    Route::apiResource('pedidos', PedidosController::class);
-    Route::apiResource('users', UserController::class);
-    Route::post('users/login', ['uses' => 'UserController@login']);
-    Route::post('extras/bluk', ['uses' => 'ExtrasController@blukStore']);
-    Route::post('empleados/bluk', ['uses' => 'EmpleadosController@blukStore']);
-    Route::post('pedidos/bluk', ['uses' => 'PedidosController@blukStore']);
+Route::middleware('auth:sanctum')->group(function(){
+    Route::group(['prefix' => 'p1', 'namespace' => 'App\Http\Controllers'], function (){
+        Route::apiResource('gerencias', GerenciaController::class);
+        Route::apiResource('metodosPagos', MetodoPagoController::class);
+        Route::apiResource('menus', MenusController::class);
+        Route::apiResource('extras', ExtrasController::class);
+        Route::apiResource('empleados', EmpleadosController::class);
+        Route::apiResource('pedidos', PedidosController::class);
+        Route::apiResource('users', UserController::class);
+        Route::post('extras/bluk', ['uses' => 'ExtrasController@blukStore']);
+        Route::post('empleados/bluk', ['uses' => 'EmpleadosController@blukStore']);
+        Route::post('pedidos/bluk', ['uses' => 'PedidosController@blukStore']);
+    });
 });
 
+Route::group(['prefix' => 'p1', 'namespace' => 'App\Http\Controllers'], function (){
+    Route::post('users/login', [UserController::class, 'login']);
+});
