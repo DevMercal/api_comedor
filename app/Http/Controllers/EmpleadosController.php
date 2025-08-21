@@ -52,8 +52,12 @@ class EmpleadosController extends Controller
         $bluk = collect($request->all())->map(function($arr, $key){
             return Arr::except($arr, ['nombreCompleto', 'idGerencia', 'tipoEmpleado']);
         });
-        //dd($bluk);
         empleados::insert($bluk->toArray());
+
+        return response()->json([
+            'status' => 200,
+            'message' => 'Empleados insertados correctamente'
+        ]);
     }
 
     /**

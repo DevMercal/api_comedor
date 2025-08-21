@@ -3,7 +3,9 @@
 namespace App\Http\Requests;
 
 use Carbon\Carbon;
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
 
 class BlukStorePedidosRequest extends FormRequest
 {
@@ -31,7 +33,13 @@ class BlukStorePedidosRequest extends FormRequest
             '*.idEmpleado' => ['required', 'integer']
         ];
     }
-
+    protected function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response()->json([
+            'status' => 404,
+            'data' => $validator->errors()
+        ]));
+    }
     protected function prepareForValidation()
     {   
         $now = Carbon::now();
@@ -46,7 +54,7 @@ class BlukStorePedidosRequest extends FormRequest
             $obj['updated_at'] = $now;
             $data[] = $obj;
         }
-
         $this->merge($data);
     }
+
 }

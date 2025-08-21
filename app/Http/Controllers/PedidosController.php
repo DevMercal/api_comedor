@@ -41,22 +41,8 @@ class PedidosController extends Controller
             'data' => $query->paginate(15)
         ]);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StorepedidosRequest $request)
     {
-        //
-        //dd($request);
         return new pedidosResource(pedidos::create($request->all()));
     }
 
@@ -99,9 +85,15 @@ class PedidosController extends Controller
         //
         $registro = pedidos::where('id_pedido', $id)->first();
         if (!$registro) {
-            return response()->json(['Error' => 'Erro a encontrar pedido'], 404);
+            return response()->json([
+                'status' => 404,
+                'message' => 'Error al encontrar el pedido'
+            ], 404);
         }
-        return response()->json($registro, 200);
+        return response()->json([
+            'status' => 200,
+            'data' => $registro
+        ]);
     }
 
     /**

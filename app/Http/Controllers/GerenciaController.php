@@ -16,11 +16,9 @@ class GerenciaController extends Controller
     public function index()
     {
         //
-        //return gerencia::all();
          try {
             // Obtener todos los registros de gerencia
             $gerencias = Gerencia::all();
-            
             // Devolver respuesta JSON con código 200 (OK)
             return response()->json([
                 'success' => true,

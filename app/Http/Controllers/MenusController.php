@@ -14,25 +14,23 @@ class MenusController extends Controller
      */
     public function index()
     {
-        //
-        return menus::all();
+        $menus = menus::all();
+        if ($menus->isEmpty()) {
+            # code...
+            return response()->json([
+                'status' => 404,
+                'message' => 'No se encontraron registros'  
+            ], 404);
+        }else {
+            return response()->json([
+                'success' => true,
+                'data' => $menus  
+            ]);
+        }
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoremenusRequest $request)
     {
-        //
-        //dd($request);
+
         return new menusResource(menus::create($request->all()));
     }
 
@@ -44,9 +42,15 @@ class MenusController extends Controller
         //
         $registro = menus::where('id_menu',$id)->first();
         if (!$registro) {
-            return response()->json(['Error' => 'Error al encontrar registro'], 404);
+            return response()->json([
+                'status' => 404,
+                'message' => 'Error al encontrar el menu.'
+            ], 404);
         }
-        return response()->json($registro, 200);
+        return response()->json([
+            'status' => 200,
+            'data' => $registro
+        ], 200);
     }
 
     /**
@@ -74,6 +78,9 @@ class MenusController extends Controller
         if (!$registro) {
             return response()->json(['Error' => 'Error al eliminar menu'], 404);
         }
-        return response()->json($registro, 200);
+        return response()->json([
+            'status' => 200,
+            'message' => 'Menu eliminado correctamente' 
+        ], 200);
     }
 }

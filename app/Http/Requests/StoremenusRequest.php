@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
 
 class StoremenusRequest extends FormRequest
 {
@@ -40,5 +42,14 @@ class StoremenusRequest extends FormRequest
             'salad_one' => $this->saladOne,
             'salad_two' => $this->saladTwo
         ]);
+    }
+
+    protected function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response()->json([
+            'status' => 404,
+            //'message' => 'Errores del registro',
+            'data' => $validator->errors()
+        ]));
     }
 }
