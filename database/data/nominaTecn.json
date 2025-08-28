@@ -1,0 +1,258 @@
+[
+  {
+    "nombreCompleto": "CASTILLO YELAMO, MOISES DANIEL",
+    "cedula": "18467449",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "EMPLEADOS",
+    "cargo": "PROGRAMADOR I"
+  },
+  {
+    "nombreCompleto": "CONTRERAS MENDEZ, YURY",
+    "cedula": "16669410",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "EMPLEADOS",
+    "cargo": "ASISTENTE ADMINISTRATIVO"
+  },
+  {
+    "nombreCompleto": "LEON CARRANZA, ANDERSON",
+    "cedula": "22563103",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "ALTO NIVEL Y DIRECCIÓN",
+    "cargo": "COORDINADOR DE INVESTIGACION Y NUEVAS TECNOLOGIAS"
+  },
+  {
+    "nombreCompleto": "NAVARRO MORENO, LUIS MANUEL",
+    "cedula": "31158004",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "EMPLEADOS",
+    "cargo": "PROGRAMADOR I"
+  },
+  {
+    "nombreCompleto": "RANGEL BRITO, DANYERBERT JOSE",
+    "cedula": "27047631",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "EMPLEADOS",
+    "cargo": "PROGRAMADOR I"
+  },
+  {
+    "nombreCompleto": "ROMERO OSORIO, DOUGLAS",
+    "cedula": "23694648",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "ALTO NIVEL Y DIRECCIÓN",
+    "cargo": "COORDINADOR DE DESARROLLO Y MANTENIMIENTO"
+  },
+  {
+    "nombreCompleto": "DELGADO CACUA, MAURICIO",
+    "cedula": "18933323",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "EMPLEADOS",
+    "cargo": "ANALISTA I"
+  },
+  {
+    "nombreCompleto": "RANGEL RAMIREZ, YOFRE JOSE",
+    "cedula": "18041907",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "ALTO NIVEL Y DIRECCIÓN",
+    "cargo": "COORDINADOR DE SISTEMAS OPERATIVOS Y SERVIDORES"
+  },
+  {
+    "nombreCompleto": "BENITEZ MARTINEZ, JENNIFER",
+    "cedula": "27807271",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "EMPLEADOS",
+    "cargo": "OPERADOR DE SOPORTE TECNICO I"
+  },
+  {
+    "nombreCompleto": "BENITEZ MARTINEZ, NESTOR",
+    "cedula": "30450020",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "EMPLEADOS",
+    "cargo": "OPERADOR DE SOPORTE TECNICO I"
+  },
+  {
+    "nombreCompleto": "BRITO PEREZ, YULIET NAKARY",
+    "cedula": "18817668",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "ALTO NIVEL Y DIRECCIÓN",
+    "cargo": "COORDINADOR DE LA UNIDAD DE  SOPORTE PRIMARIO"
+  },
+  {
+    "nombreCompleto": "CACERES VILLARREAL, JOSE",
+    "cedula": "15314423",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "ALTO NIVEL Y DIRECCIÓN",
+    "cargo": "JEFE DE DIVISION"
+  },
+  {
+    "nombreCompleto": "CENTENO MEDINA, ALEJANDRO",
+    "cedula": "26908534",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "EMPLEADOS",
+    "cargo": "ANALISTA DE SOPORTE TECNICO I"
+  },
+  {
+    "nombreCompleto": "DURAN AVILA, YOIMER JESUS",
+    "cedula": "30181088",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "EMPLEADOS",
+    "cargo": "ANALISTA I"
+  },
+  {
+    "nombreCompleto": "LAIRET SIMANCAS, FREYMAR",
+    "cedula": "31108877",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "EMPLEADOS",
+    "cargo": "OPERADOR DE SOPORTE TECNICO I"
+  },
+  {
+    "nombreCompleto": "LINARES SANCHEZ, KELVIN ALEXIS",
+    "cedula": "26089058",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "EMPLEADOS",
+    "cargo": "ANALISTA DE SOPORTE TECNICO I"
+  },
+  {
+    "nombreCompleto": "MENDEZ PERALES, CLEVIS MARIA",
+    "cedula": "9485718",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "EMPLEADOS",
+    "cargo": "ANALISTA II"
+  },
+  {
+    "nombreCompleto": "MILANO MORENO, CESAR",
+    "cedula": "15585476",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "EMPLEADOS",
+    "cargo": "ANALISTA I"
+  },
+  {
+    "nombreCompleto": "MORAO MARCHAN, MARIA JOSE",
+    "cedula": "27342051",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "EMPLEADOS",
+    "cargo": "OPERADOR DE SOPORTE TECNICO I"
+  },
+  {
+    "nombreCompleto": "PLAZA PAEZ, LISANDRO ALBERTO",
+    "cedula": "13423269",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "EMPLEADOS",
+    "cargo": "ANALISTA I"
+  },
+  {
+    "nombreCompleto": "RAMOS PACHECO, MOISES DANIEL",
+    "cedula": "31160739",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "EMPLEADOS",
+    "cargo": "OPERADOR DE SOPORTE TECNICO I"
+  },
+  {
+    "nombreCompleto": "SALAZAR ROMERO, KLEBER TOMAS",
+    "cedula": "6494634",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "EMPLEADOS",
+    "cargo": "ANALISTA II"
+  },
+  {
+    "nombreCompleto": "YNFANTE CARIAS, SAMUEL MIGUEL",
+    "cedula": "27150429",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "EMPLEADOS",
+    "cargo": "ANALISTA I"
+  },
+  {
+    "nombreCompleto": "DURAN DELGADO, MARIANA DE LA",
+    "cedula": "19508010",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "EMPLEADOS",
+    "cargo": "ANALISTA I"
+  },
+  {
+    "nombreCompleto": "GONZALEZ ANGULO, RAFAEL",
+    "cedula": "30960104",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "EMPLEADOS",
+    "cargo": "ANALISTA I"
+  },
+  {
+    "nombreCompleto": "MARTINEZ VAZQUEZ, JESUS",
+    "cedula": "22030942",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "CONTRATADOS EMPLEADOS",
+    "cargo": "ANALISTA II"
+  },
+  {
+    "nombreCompleto": "PONCE RANGEL, LUZCELIA DEL",
+    "cedula": "16682691",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "EMPLEADOS",
+    "cargo": "ANALISTA I"
+  },
+  {
+    "nombreCompleto": "QUINTERO PEÑA, ALEHANDRO",
+    "cedula": "16084311",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "ALTO NIVEL Y DIRECCIÓN",
+    "cargo": "JEFE DE DIVISIÓN"
+  },
+  {
+    "nombreCompleto": "RODRIGUEZ , NUBIS SOL",
+    "cedula": "6056384",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "EMPLEADOS",
+    "cargo": "ANALISTA I"
+  },
+  {
+    "nombreCompleto": "SEGOVIA BORGES, JUAN CARLOS",
+    "cedula": "11411485",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "EMPLEADOS",
+    "cargo": "ANALISTA I"
+  },
+  {
+    "nombreCompleto": "VALDIRIS FLORES, GERARDO JESUS",
+    "cedula": "27039414",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "EMPLEADOS",
+    "cargo": "ANALISTA II"
+  },
+  {
+    "nombreCompleto": "VARELA TORRES, CARMEN",
+    "cedula": "16889002",
+    "idGerencia": "22",
+    "estado": "SEDE CENTRAL",
+    "tipoEmpleado": "EMPLEADOS",
+    "cargo": "ANALISTA II"
+  }
+]

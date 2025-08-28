@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
             MetodoPagoSeeder::class
             // Otros seeders que quieras ejecutar
         ]);
+        
+        $this->call(EmpleadosSeeder::class);
 
         User::factory()->create([
             'name' => 'Moises Castillo',
