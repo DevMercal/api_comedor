@@ -7,7 +7,7 @@ use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class StoremenusRequest extends FormRequest
+class BlukStoremenusRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,22 +25,12 @@ class StoremenusRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'foodCategory' => ['required', 'string'],
-            'ingredient' => ['required', 'string'],
-            'dateMenu' => ['', 'date']
+            '.*foodCategory' => ['required', 'string'],
+            '.*ingredient' => ['required', 'string'],
+            '.*dateMenu' => ['date']
         ];
     }
-
-    protected function prepareForValidation()
-    {   
-        $fechaActual = Carbon::now()->toDateString();
-        $this->merge([
-            'food_category' => $this->foodCategory,
-            'name_ingredient' => $this->ingredient,
-            'date_menu' => $fechaActual
-        ]);
-    }
-
+    
     protected function failedValidation(Validator $validator)
     {
         throw new HttpResponseException(response()->json([
@@ -48,4 +38,20 @@ class StoremenusRequest extends FormRequest
             'data' => $validator->errors()
         ]));
     }
+    protected function prepareForValidation()
+    {   
+        $fechaActual = Carbon::now()->toDateString();
+        $now = Carbon::now();
+        $data = [];
+        foreach ($this->toArray() as $obj) {
+            $obj['food_category'] = $obj['foodCategory'] ?? NULL;
+            $obj['name_ingredient'] = $obj['ingredient'] ?? NULL;
+            $obj['date_menu'] = $fechaActual;
+            $obj['created_at'] = $now;
+            $obj['updated_at'] = $now;
+            $data[] = $obj;
+        }
+        $this->merge($data);
+    }
+
 }

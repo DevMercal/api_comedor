@@ -14,13 +14,9 @@ return new class extends Migration
         Schema::create('menuses', function (Blueprint $table) {
             $table->engine('InnoDB');
             $table->id('id_menu');
-            $table->string('sopa', 80);
-            $table->string('contour_one', 80);
-            $table->string('contour_two', 80);
-            $table->string('salad_one', 80);
-            $table->string('salad_two', 80);
-            $table->string('juice', 80);
-            $table->string('dessert', 80);
+            $table->string('food_category', 80);
+            $table->string('name_ingredient', 80);
+            $table->date('date_menu');
             $table->timestamps();
         });
     }

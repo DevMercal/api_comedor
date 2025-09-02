@@ -6,6 +6,9 @@ use App\Models\menus;
 use App\Http\Requests\StoremenusRequest;
 use App\Http\Requests\UpdatemenusRequest;
 use App\Http\Resources\menusResource;
+use App\Http\Requests\BlukStoremenusRequest;
+use Arr;
+use Carbon\Carbon;
 
 class MenusController extends Controller
 {
@@ -14,19 +17,30 @@ class MenusController extends Controller
      */
     public function index()
     {
-        $menus = menus::all();
+        $today = Carbon::today();
+        //$menus = menus::all();
+        $menus = menus::whereDate('date_menu', $today)->get();
         if ($menus->isEmpty()) {
-            # code...
             return response()->json([
-                'status' => 404,
+                'status' => 401,
                 'message' => 'No se encontraron registros'  
-            ], 404);
+            ], 401);
         }else {
             return response()->json([
                 'success' => true,
-                'data' => $menus  
+                'data' => $menus->toArray() 
             ]);
         }
+    }
+    public function BlukStore(BlukStoremenusRequest $request){
+        $bluk = collect($request->all())->map(function ($arr, $key){
+            return Arr::except($arr, ['foodCategory', 'ingredient', 'dateMenu']);
+        }); 
+        menus::insert($bluk->toArray());
+        return response()->json([
+            'status' => 200,
+            'message' => "Registros Guardados Correctamente"
+        ]);
     }
     public function store(StoremenusRequest $request)
     {

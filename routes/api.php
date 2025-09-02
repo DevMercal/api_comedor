@@ -26,6 +26,7 @@ Route::middleware('auth:sanctum')->group(function(){
         Route::post('extras/bluk', ['uses' => 'ExtrasController@blukStore']);
         Route::post('empleados/bluk', ['uses' => 'EmpleadosController@blukStore']);
         Route::post('pedidos/bluk', ['uses' => 'PedidosController@blukStore']);
+        Route::post('menus/bluk', ['uses' => 'MenusController@blukStore']);
     });
 });
 
